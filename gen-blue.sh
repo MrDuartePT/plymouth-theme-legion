@@ -2,8 +2,8 @@
 
 set -e
 
-RENDERDIR=render
-TARGETDIR=legion
+RENDERDIR=render-blue
+TARGETDIR=legion-blue
 
 FRAME_THROBBER_START=1
 FRAME_THROBBER_END=60
@@ -54,10 +54,10 @@ for file in "${RENDERDIR_LIST[@]}"; do
 	echo "Saved $file to $target"
 done
 
-magick -delay 1x30 $TARGETDIR/$THROBBER_PFX*.png $TARGETDIR/$STARTUP_ANIM_PFX*.png -background black -alpha remove -gravity center -extent 1280x720 -layers optimize -loop 0 startup.gif
+magick -delay 1x30 $TARGETDIR/$THROBBER_PFX*.png $TARGETDIR/$STARTUP_ANIM_PFX*.png -background black -alpha remove -gravity center -extent 1280x720 -layers optimize -loop 0 startup-blue.gif
 
 echo "Saved startup.gif"
 
-magick -delay 1x30 $TARGETDIR/$THROBBER_PFX*.png $TARGETDIR/$SHUTDOWN_ANIM_PFX*.png -background black -alpha remove -gravity center -extent 1280x720 -layers optimize -loop 0 shutdown.gif
+magick -delay 1x30 $TARGETDIR/$THROBBER_PFX*.png $TARGETDIR/$SHUTDOWN_ANIM_PFX*.png -background black -alpha remove -gravity center -extent 1280x720 -layers optimize -loop 0 shutdown-blue.gif
 
 echo "Saved shutdown.gif"
